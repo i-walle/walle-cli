@@ -1,0 +1,136 @@
+# 忽略操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 忽略IDE和编辑器生成的文件
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 忽略依赖目录
+node_modules/
+bower_components/
+vendor/
+
+# 忽略编译生成的文件
+*.class
+*.exe
+*.dll
+*.o
+*.so
+*.a
+*.lib
+*.out
+*.app
+*.ipa
+*.apk
+*.jar
+
+# 忽略日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 忽略环境变量文件
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# 忽略缓存目录
+.cache/
+.temp/
+.tmp/
+dist/
+build/
+out/
+
+# 忽略系统文件
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# 忽略测试相关文件
+coverage/
+*.lcov
+
+# 忽略文档生成文件
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# 忽略Python相关文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 忽略Ruby相关文件
+*.gem
+.bundle/
+.ruby-version
+
+# 忽略Java相关文件
+*.class
+*.war
+*.ear
+hs_err_pid*
+
+# 忽略C/C++相关文件
+*.o
+*.ko
+*.obj
+*.elf
+*.ilk
+*.pdb
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# 忽略Go相关文件
+bin/
+pkg/
+
+# 忽略Rust相关文件
+/target/
+**/*.rs.bk
+
+# 忽略Visual Studio相关文件
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*.scc
+
+# 忽略其他常见文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
