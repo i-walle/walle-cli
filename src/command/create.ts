@@ -3,6 +3,7 @@ import fs from "fs-extra";
 import { clone } from "../utils/clone";
 import chalk from "chalk";
 import path from "path";
+import axios, { AxiosResponse } from "axios";
 
 interface ITemplateInfo {
   name: string;
@@ -50,6 +51,22 @@ export async function isOverWrite(filePath: string) {
   });
 }
 
+export async function getNpmInfo(name: string) {
+  const npmUrl = `https://registry.npmjs.org/${name}`;
+  let res = {};
+  try {
+    res = await axios.get(npmUrl);
+  } catch (error) {
+    console.log(chalk.redBright(error));
+  }
+  const { data } = res as AxiosResponse
+  return data;
+}
+
+export async function checkVersion(name: string, version: string) {
+  
+}
+
 export async function create(projectName: string) {
   // 初始化模版列表
   const templateList = Array.from(templates).map(
@@ -84,7 +101,9 @@ export async function create(projectName: string) {
 
   const info = templates.get(templateName);
 
-  console.log(chalk.blue("Hello world!"));
+  console.log("info",info)
+  getNpmInfo((info?.name) as string);
+
   if (info) {
     // clone(info.downloadUrl, projectName, ["-b", info.branch]);
   }

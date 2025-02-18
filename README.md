@@ -1,4 +1,4 @@
-# walle-cli
+# iwalle-cli
 ![Npm 版本](https://img.shields.io/badge/walle_cli-v0.0.1-blue)
 
 ## 📖简介
@@ -13,12 +13,12 @@
 
 ```bash
 # 使用模版创建新项目
-walle create
+iwalle create
  
 # 根据项目文件夹名称创建新项目
-walle create [projectName]
+iwalle create [projectName]
 
 # 查看脚手架版本
-walle -v
-walle --version
+iwalle -v
+iwalle --version
 ```

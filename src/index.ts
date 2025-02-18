@@ -2,7 +2,7 @@ import { Command } from "commander";
 import { version } from "../package.json";
 import { create } from "./command/create";
 
-const program = new Command("walle");
+const program = new Command("iwalle");
 program.version(version, "-v, --version");
 
 program
