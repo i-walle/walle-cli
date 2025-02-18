@@ -16,7 +16,7 @@
   "author": "iwalle",
   "license": "ISC",
   "bin": {
-    "walle": "./dist/index.js"
+    "iwalle": "bin/index.js"
   },
   "files": [
     "dist",
