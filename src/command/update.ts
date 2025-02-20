@@ -3,7 +3,7 @@ import ora from "ora";
 import chalk from "chalk";
 
 const spinner = ora({
-    text: "iwalle-cli 更新中...",
+    text: "iwalle-cli 更新中.....",
     spinner: {
         frames: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"],
         interval: 100
