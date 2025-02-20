@@ -11,7 +11,7 @@ let readmeContent = fs.readFileSync(readmePath, 'utf-8')
 // 替换readme.md中的版本号图片
 readmeContent = readmeContent.replace(
     /https:\/\/img.shields.io\/badge\/[^ )]+/, 
-    `https://img.shields.io/badge/${name.replace('-', ' ')}-v${newVersion}-blue`
+    `https://img.shields.io/badge/${name.replace('-', '--')}-v${newVersion}-blue`
 )
 
 fs.writeFileSync(readmePath, readmeContent)
