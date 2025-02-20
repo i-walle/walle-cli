@@ -21,4 +21,7 @@ iwalle create [projectName]
 # 查看脚手架版本
 iwalle -v
 iwalle --version
+
+# 更新脚手架
+iwalle update
 ```

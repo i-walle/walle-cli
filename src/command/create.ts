@@ -1,9 +1,11 @@
 import { input, select } from "@inquirer/prompts";
 import fs from "fs-extra";
 import { clone } from "../utils/clone";
+import { gt } from "lodash";
 import chalk from "chalk";
 import path from "path";
 import axios, { AxiosResponse } from "axios";
+import { name, version } from "../../package.json";
 
 interface ITemplateInfo {
   name: string;
@@ -59,12 +61,31 @@ export async function getNpmInfo(name: string) {
   } catch (error) {
     console.log(chalk.redBright(error));
   }
-  const { data } = res as AxiosResponse
+  const { data } = res as AxiosResponse;
   return data;
 }
 
+export async function getNpmLatestVersion(name: string) {
+  const npmData = await getNpmInfo(name);
+  return npmData["dist-tags"].latest;
+}
+
 export async function checkVersion(name: string, version: string) {
-  
+  const latestVersion = await getNpmLatestVersion(name);
+  const need = gt(latestVersion, version);
+  if (need) {
+    console.log(
+      `检测到iwalle-cli最新版本：${chalk.redBright(
+        latestVersion
+      )}, 当前版本：${chalk.redBright(version)}`
+    );
+    console.log(
+      `可执行 ${chalk.yellow(
+        "npm install -g iwalle-cli@latest"
+      )} 或者 ${chalk.yellow("iwalle update")} 更新`
+    );
+  }
+  return need;
 }
 
 export async function create(projectName: string) {
@@ -79,6 +100,9 @@ export async function create(projectName: string) {
       };
     }
   );
+
+  // 检查版本
+  await checkVersion(name, version);
 
   if (!projectName) {
     projectName = await input({ message: "请输入项目名称" });
@@ -100,10 +124,6 @@ export async function create(projectName: string) {
   });
 
   const info = templates.get(templateName);
-
-  console.log("info",info)
-  getNpmInfo((info?.name) as string);
-
   if (info) {
     // clone(info.downloadUrl, projectName, ["-b", info.branch]);
   }
