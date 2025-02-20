@@ -1,5 +1,5 @@
 # iwalle-cli
-![Npm 版本](https://img.shields.io/badge/iwalle--cli-v0.0.8-blue)
+![Npm 版本](https://img.shields.io/badge/iwalle--cli-v0.0.9-blue)
 
 ## 📖简介
 
