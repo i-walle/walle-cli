@@ -1,6 +1,6 @@
 {
   "name": "iwalle-cli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "iwalle-cli 脚手架",
   "main": "index.js",
   "scripts": {
